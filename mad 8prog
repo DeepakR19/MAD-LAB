@@ -1,0 +1,268 @@
+8. Phone Dialer
+Aim
+To create an activity like a phone dialer with CALL and SAVE buttons. On pressing the CALL button, it must call the phone number and on pressing the SAVE button it must save the number to the phone contacts.
+
+Procedure
+
+1) Firstly Create an Application by Name “CallActivity”
+2) Go to xml code of design change the layout to “RelativeLayout”
+3) Add TextView component & change the following properties:
+• Size: 38dp
+• Text: Call Activity
+• Center-Align
+4) Add EditText component & change the following properties in XML Code:
+• id: “@+id/phoneNumberEditText”
+5) Add PlainText(EditText) component & change the following properties in XML Code:
+• Text: “”
+• Hint: “Copied Text”
+• id: “@+id/editText2”
+6) Add three buttons to the design & change the text of the Buttons to “Clear”, “Call”, “Save” and
+change the id as follows:
+• id:”@+id/clearBtn”
+• id:”@+id/callBtn”
+• id:”@+id/saveBtn”
+7) Add twelve buttons to the design & change the text of the Buttons as 1,2,3,4,5,6,7,8,9,0,*,#
+
+Activity_main.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<TextView
+android:layout_width="298dp"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="54dp"
+android:layout_marginBottom="575dp"
+android:text="Call Application"
+android:textSize="36dp"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintLeft_toLeftOf="parent"
+app:layout_constraintRight_toRightOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+<EditText
+android:id="@+id/phoneNumberEditText"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="176dp"
+android:layout_marginBottom="462dp"
+android:ems="10"
+android:inputType="phone" />
+<Button
+android:id="@+id/clearBtn"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="52dp"
+android:layout_marginBottom="459dp"
+android:text="Clear" />
+<Button
+android:id="@+id/button2"
+android:layout_width="76dp"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="311dp"
+android:onClick="inputNumber"
+android:layout_marginBottom="341dp"
+android:text="1" />
+<Button
+android:id="@+id/button3"
+android:layout_width="76dp"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:onClick="inputNumber"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="170dp"
+android:layout_marginBottom="341dp"
+android:text="2" />
+<Button
+android:id="@+id/button4"
+android:layout_width="76dp"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="32dp"
+android:onClick="inputNumber"
+android:layout_marginBottom="343dp"
+android:text="3" />
+<Button
+android:id="@+id/button5"
+android:layout_width="76dp"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:onClick="inputNumber"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="311dp"
+android:layout_marginBottom="241dp"
+android:text="4" />
+<Button
+android:id="@+id/button6"
+android:layout_width="76dp"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="175dp"
+android:onClick="inputNumber"
+android:layout_marginBottom="239dp"
+android:text="5" />
+<Button
+android:id="@+id/button7"
+android:layout_width="76dp"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="32dp"
+android:onClick="inputNumber"
+android:layout_marginBottom="239dp"
+android:text="6" />
+<Button
+android:id="@+id/button8"
+android:layout_width="76dp"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="313dp"
+android:onClick="inputNumber"
+android:layout_marginBottom="142dp"
+android:text="7" />
+<Button
+android:id="@+id/button9"
+android:layout_width="76dp"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="171dp"
+android:onClick="inputNumber"
+android:layout_marginBottom="147dp"
+android:text="8" />
+<Button
+android:id="@+id/button10"
+android:layout_width="76dp"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="34dp"
+android:onClick="inputNumber"
+android:layout_marginBottom="152dp"
+android:text="9" />
+<Button
+android:id="@+id/button11"
+android:layout_width="76dp"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="309dp"
+android:onClick="inputNumber"
+android:layout_marginBottom="80dp"
+android:text="#" />
+<Button
+android:id="@+id/button12"
+android:layout_width="76dp"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="169dp"
+android:onClick="inputNumber"
+android:layout_marginBottom="78dp"
+android:text="0" />
+<Button
+android:id="@+id/button13"
+android:layout_width="76dp"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="34dp"
+android:onClick="inputNumber"
+android:layout_marginBottom="88dp"
+android:text="*" />
+<Button
+android:id="@+id/callBtn"
+android:layout_width="76dp"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="284dp"
+android:layout_marginBottom="17dp"
+android:text="Call" />
+<Button
+android:id="@+id/saveBtn"
+android:layout_width="76dp"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="60dp"
+android:layout_marginBottom="17dp"
+android:text="Save" />
+</RelativeLayout>
+
+
+MainActivity.java
+
+package com.example.callingapplication;
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+public class MainActivity extends AppCompatActivity {
+EditText phoneNumberEditText;
+Button clearBtn,callBtn,saveBtn;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+phoneNumberEditText=findViewById(R.id.phoneNumberEditText);
+callBtn=findViewById(R.id.callBtn);
+saveBtn=findViewById(R.id.saveBtn);
+clearBtn=findViewById(R.id.clearBtn);
+clearBtn.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+phoneNumberEditText.setText("");
+}
+});
+callBtn.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+String phoneNumber=phoneNumberEditText.getText().toString();
+Intent intent=new Intent(Intent.ACTION_DIAL);
+intent.setData(Uri.parse("tel:"+phoneNumber));
+startActivity(intent);
+}
+});
+saveBtn.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+String phoneNumber=phoneNumberEditText.getText().toString();
+Intent intent=new Intent(Intent.ACTION_INSERT);
+intent.setType(ContactsContract.Contacts.CONTENT_TYPE);
+intent.putExtra(ContactsContract.Intents.Insert.PHONE,phoneNumber);
+startActivity(intent);
+}
+});
+}
+public void inputNumber(View V){
+Button btn=(Button)V;
+String digit=btn.getText().toString();
+String phoneNumber=phoneNumberEditText.getText().toString();
+phoneNumberEditText.setText(phoneNumber +digit);
+}
+}
+
+Output
+ 
+
+Result
+	Thus, the phone dialer program is executed successfully.
